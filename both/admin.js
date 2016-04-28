@@ -1,5 +1,5 @@
 AdminConfig = {
-  name: 'We Work Meteor',
+  name: 'Cannaworxs',
   collections: {
     Jobs: {
       icon: 'briefcase',
