@@ -11,7 +11,7 @@ Router.configure({
     },
     progressSpinner: false,
     progressDelay: 250,
-    title: "Cannaworxs - Job board and Employer listing just for Cannabis"
+    title: "We Work Cannabis - Job board and Employer listing just for Cannabis"
 });
 
 
@@ -61,12 +61,12 @@ Router.map(function() {
 
     this.route('jobs', {
         path: '/jobs',
-        title: "Cannaworxs - All Jobs"
+        title: "We Work Cannabis - All Jobs"
     });
 
     this.route('myJobs', {
         path: '/myjobs',
-        title: "Cannaworxs - My Jobs",
+        title: "We Work Cannabis - My Jobs",
         data: function() {
             return {
                 jobs: Jobs.find({
@@ -87,7 +87,7 @@ Router.map(function() {
         path: '/jobs/:_id/:slug?',
         title: function() {
             if (this.data())
-                return "Cannaworxs - " + this.data().title;
+                return "We Work Cannabis - " + this.data().title;
         },
         data: function() {
             return Jobs.findOne({
@@ -112,12 +112,12 @@ Router.map(function() {
 
     this.route('jobNew', {
         path: '/job',
-        title: Cannaworxs - Post a Job"
+        title: "We Work Cannabis - Post a Job"
     });
 
     this.route('jobEdit', {
         path: '/jobs/:_id/:slug/edit',
-        title: "Cannaworxs - Edit Job Post",
+        title: "We Work Cannabis - Edit Job Post",
         data: function() {
             return {
                 job: Jobs.findOne({
@@ -132,7 +132,7 @@ Router.map(function() {
 
     this.route('profiles', {
         path: '/profiles',
-        title: "Cannaworxs - All Developers",
+        title: "We Work Cannabis - All Developers",
         subscriptions: function() {
             return subs.subscribe('developerUsers');
         }
@@ -142,7 +142,7 @@ Router.map(function() {
         path: '/profiles/:_id/:slug?',
         title: function() {
             if (this.data())
-                return "Cannaworxs - " + this.data().displayName() + " - " + this.data().title;
+                return "We Work Cannabis - " + this.data().displayName() + " - " + this.data().title;
         },
         data: function() {
             return Profiles.findOne({
@@ -167,7 +167,7 @@ Router.map(function() {
 
     this.route('profileNew', {
         path: '/profile',
-        title: "Cannaworxs - Create Developer Profile",
+        title: "We Work Cannabis - Create Developer Profile",
         onBeforeAction: function() {
             if (Meteor.user().isDeveloper) {
                 Router.go('profile', Profiles.findOne({
@@ -181,7 +181,7 @@ Router.map(function() {
 
     this.route('profileEdit', {
         path: '/profiles/:_id/:slug/edit',
-        title: "Cannaworxs - Edit My Developer Profile",
+        title: "We Work Cannabis - Edit My Developer Profile",
         data: function() {
             return {
                 profile: Profiles.findOne({

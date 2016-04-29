@@ -15,8 +15,8 @@ Meteor.methods({
 		if (job.status !== "active")
             throw new Meteor.Error("You can only deactivate an active job.");
 
-
-
+      
+        
         Jobs.update({
             _id: jobId
         }, {
@@ -42,7 +42,7 @@ Meteor.methods({
         var setObject = {
             status: status
         };
-
+        
         if (Meteor.isServer && status === "active" && job.featured())
             setObject.featuredThrough = moment().add(30,"days").toDate();
 
@@ -69,8 +69,8 @@ Meteor.methods({
         var setObject = {
             status: status
         };
-
-
+        
+        
         Profiles.update({
             _id: profileId
         }, {
@@ -95,7 +95,7 @@ Meteor.methods({
 	        	source:tokenId,
 	        	amount:10000,
 	        	currency:"usd",
-	        	description:"Cannaworxs - Featured Job Post - 30 Days"
+	        	description:"We Work Meteor - Featured Job Post - 30 Days"
 	        });
 
 	        if(result && result.status === "succeeded"){

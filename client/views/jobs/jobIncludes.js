@@ -36,7 +36,7 @@ Template.jobFeatured.events({
     btn.button('loading');
     StripeCheckout.open({
       key: Meteor.settings.public.stripe.pubKey,
-      name: 'Cannaworxs',
+      name: 'We Work Meteor',
       billingAddress: false,
       allowRememberMe: true,
       description: 'Featured Job Post - 30 Days',
