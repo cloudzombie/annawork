@@ -135,7 +135,7 @@ Profiles.attachSchema(
     status: {
       type: String,
       allowedValues: PROFILE_STATUSES,
-      defaultValue:"active"
+      defaultValue: "active"
     },
     // Force value to be current date (on server) upon insert
     // and prevent updates thereafter.
@@ -168,6 +168,16 @@ Profiles.attachSchema(
     }
   })
 );
+
+if (Meteor.isServer) {
+  Profiles._ensureIndex({
+    "userName": "text",
+    "name": "text",
+    "title": "text",
+    "description": "text",
+    "location": "text"
+  });
+}
 
 Profiles.helpers({
   displayName: function() {
